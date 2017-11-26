@@ -1,0 +1,33 @@
+{
+  "name": "world-of-code-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "axios-mock-adapter": "^1.10.0",
+    "body-parser": "^1.18.2",
+    "connect-session-sequelize": "^5.0.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "lodash.get": "^4.4.2",
+    "lodash.isequal": "^4.5.0",
+    "mocha": "^4.0.1",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-youtube-v3": "^2.1.0",
+    "pg": "6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "4.3.1",
+    "socket.io": "2.0.3",
+    "supertest": "^3.0.0"
+  }
+}
