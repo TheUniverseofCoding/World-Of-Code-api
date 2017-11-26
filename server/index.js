@@ -57,7 +57,7 @@ const createApp = () => {
   app.use(express.static(path.join(__dirname, '..', 'public')))
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
-  .use((req, res, next) => {
+  app.use((req, res, next) => {
     if (path.extname(req.path).length) {
       const err = new Error('Not found')
       err.status = 404
@@ -85,8 +85,8 @@ const startListening = () => {
   const server = app.listen(PORT, () => console.log(`Mixing it up on port ${ PORT }`))
 
   // set up our socket control center
-  const io = socketio(server)
-  require('./socket')(io)
+  // const io = socketio(server)
+  // require('./socket')(io)
 }
 
 const syncDb = () => db.sync()
