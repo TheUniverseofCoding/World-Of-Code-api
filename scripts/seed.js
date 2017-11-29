@@ -1,7 +1,8 @@
 'use strict'
 
 const db = require('../server/db')
-const { User, Question, Location } = require('../server/db/models')
+const { User, Location, Question } = require('../server/db/models')
+
 async function seed () {
   await db.sync({ force: true })
   console.log('db synced!')
@@ -23,8 +24,8 @@ async function seed () {
       return num + 5 }`, boilerplate: 'const myFunction = ', locationId: 1})
   ])
   console.log(`seeded ${users.length} users`)
-  console.log(`seeded ${questions.length} questions`)
   console.log(`seeded ${locations.length} locations`)
+  console.log(`seeded ${questions.length} questions`)
   console.log(`seeded successfully`)
 }
 
