@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const { User, Question } = require('../server/db/models')
+const { User, Question, Location } = require('../server/db/models')
 async function seed () {
   await db.sync({ force: true })
   console.log('db synced!')
@@ -10,11 +10,21 @@ async function seed () {
     User.create({ email: 'cody@email.com', password: '123' }),
     User.create({ email: 'murphy@email.com', password: '123' })
   ])
+  const locations = await Promise.all([
+    Location.create({id: 1, url: 'https://www.youtube.com/', userId: 1}),
+    Location.create({id: 2, url: 'http://www.google.com/', userId: 2}),
+  ])
   const questions = await Promise.all([
-    Question.create({content: 'make an array', hints: ['go for it'], answer: 'const array=[1,2,3,4,5]', boilerplate: 'const array=[]'})
+    Question.create({content: 'make an array', description: 'Arrays', hints: ['const array...'], answer: 'const array=[1,2,3,4,5]', boilerplate: 'const array=[]', locationId: 1}),
+    Question.create({content: 'make an object', description: 'Objects', hints: ['const obj...'], answer: 'const obj = {name: cody, age: 30}', boilerplate: 'const obj={}', locationId: 1 }),
+    Question.create({content: 'make a for-loop', description: 'For-Loops', hints: ['for (let i = 0)...'], answer: `for (let i = 0; i < 5; i++){
+      i*2 }`, boilerplate: 'for ()', locationId: 1 }),
+    Question.create({content: 'make a function', description: 'Functions', hints: ['const functionName...'], answer: `const myFunction = num => {
+      return num + 5 }`, boilerplate: 'const myFunction = ', locationId: 1})
   ])
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${questions.length} questions`)
+  console.log(`seeded ${locations.length} locations`)
   console.log(`seeded successfully`)
 }
 
