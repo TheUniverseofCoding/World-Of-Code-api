@@ -1,7 +1,8 @@
 'use strict'
 
 const db = require('../server/db')
-const { User, Question, Location } = require('../server/db/models')
+const { User, Location, Question } = require('../server/db/models')
+
 async function seed () {
   await db.sync({ force: true })
   console.log('db synced!')
@@ -12,7 +13,6 @@ async function seed () {
   ])
   const locations = await Promise.all([
     Location.create({id: 1, url: 'https://www.youtube.com/', userId: 1}),
-    Location.create({id: 2, url: 'http://www.google.com/', userId: 2}),
   ])
   const questions = await Promise.all([
     Question.create({content: 'make an array', description: 'Arrays', hints: ['const array...'], answer: 'const array=[1,2,3,4,5]', boilerplate: 'const array=[]', locationId: 1}),
@@ -23,8 +23,8 @@ async function seed () {
       return num + 5 }`, boilerplate: 'const myFunction = ', locationId: 1})
   ])
   console.log(`seeded ${users.length} users`)
-  console.log(`seeded ${questions.length} questions`)
   console.log(`seeded ${locations.length} locations`)
+  console.log(`seeded ${questions.length} questions`)
   console.log(`seeded successfully`)
 }
 
