@@ -7,7 +7,7 @@ const { Question, UserQuestion } = require('../../db/models')
 
 // find question by id (req.question)
 router.param('id', (req, res, next, id) => {
-  Question.findById(+id, { include: [{ all: true }] })
+  Question.findById(id, { include: [{ all: true }] })
     .then(question => {
       if (!question) throw err(404, 'question was not found')
       else {
