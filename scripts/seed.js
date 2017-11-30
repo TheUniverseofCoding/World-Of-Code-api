@@ -70,7 +70,35 @@ async function seed () {
       answer: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "! Welcome to CodeMode!";`,
       boilerplate: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "! Welcome to CodeMode!";`,
       locationId: 3
-    })
+    }),
+    Question.create({
+        content: 'Countdown',
+        description: 'Countdown',
+        answer: `var countdown = function (value) { if (value > 0) { return countdown(value - 1); } else { return value; } }; countdown(10);`,
+        boilerplate: `var countdown = function (value) { if (value > 0) { return countdown(value - 1); } else { return value; } }; countdown(10);`,
+        locationId: 3
+      }),
+      Question.create({
+        content: 'Fibonacci',
+        description: 'Fibonacci',
+        answer: `function fibonacci(num) { if (num <= 1) return 1; return fibonacci(num - 1) + fibonacci(num - 2); } fibonacci(10)`,
+        boilerplate: `function fibonacci(num) { if (num <= 1) return 1; return fibonacci(num - 1) + fibonacci(num - 2); } fibonacci(10)`,
+        locationId: 3
+      }),
+      Question.create({
+        content: 'Factorial',
+        description: 'Factorial',
+        answer: `function factorial(n) { if (n === 0) { return 1; } return n * factorial(n - 1); } factorial(5)`,
+        boilerplate: `function factorial(n) { if (n === 0) { return 1; } return n * factorial(n - 1); } factorial(5)`,
+        locationId: 3
+      }),
+      Question.create({
+        content: 'Make Tree',
+        description: 'Make Tree',
+        answer: `let categories = [ { id: 'animals', 'parent': null }, { id: 'mammals', 'parent': 'animals' }, { id: 'cats', 'parent': 'mammals' }, { id: 'dogs', 'parent': 'mammals' }, { id: 'chihuahua', 'parent': 'dogs' }, { id: 'labrador', 'parent': 'dogs' }, { id: 'persian', 'parent': 'cats' }, { id: 'siamese', 'parent': 'cats' } ] let makeTree = (categories, parent) => { let node = {} categories .filter(c => c.parent === parent) .forEach(c => node[c.id] = makeTree(categories, c.id)) return node } JSON.stringify( makeTree(categories, null), null, 2 )`,
+        boilerplate: `let categories = [ { id: 'animals', 'parent': null }, { id: 'mammals', 'parent': 'animals' }, { id: 'cats', 'parent': 'mammals' }, { id: 'dogs', 'parent': 'mammals' }, { id: 'chihuahua', 'parent': 'dogs' }, { id: 'labrador', 'parent': 'dogs' }, { id: 'persian', 'parent': 'cats' }, { id: 'siamese', 'parent': 'cats' } ] let makeTree = (categories, parent) => { let node = {} categories .filter(c => c.parent === parent) .forEach(c => node[c.id] = makeTree(categories, c.id)) return node } JSON.stringify( makeTree(categories, null), null, 2 )`,
+        locationId: 3
+      })
   ])
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${locations.length} locations`)
