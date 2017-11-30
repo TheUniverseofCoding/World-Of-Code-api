@@ -45,26 +45,30 @@ async function seed () {
     }),
     Question.create({
       content: 'Prompt Intro',
+      description: 'Prompt Intro',
       answer: `prompt('Hi! What is your name?');`,
       boilerplate: `prompt('Hi! What is your name?');`,
       locationId: 3
     }),
     Question.create({
       content: 'Alert Intro',
+      description: 'Alert Intro',
       answer: `var name = prompt('Hi! What is your name?'); alert(name);`,
       boilerplate: `var name = prompt('Hi! What is your name?'); alert(name);`,
       locationId: 3
     }),
     Question.create({
       content: 'Combine Them',
+      description: 'Combine Them',
       answer: `var first = prompt('Hi! What is your first name?'); var last = prompt('Great! What is your last name?'); alert(first + " " + last);`,
       boilerplate: `var first = prompt('Hi! What is your first name?'); var last = prompt('Great! What is your last name?'); alert(first + " " + last);`,
       locationId: 3
     }),
     Question.create({
       content: 'Give Thanks',
-      answer: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\\nWelcome to CodeMode!";`,
-      boilerplate: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\\nWelcome to CodeMode!";`,
+      description: 'Give Thanks',
+      answer: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "! Welcome to CodeMode!";`,
+      boilerplate: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "! Welcome to CodeMode!";`,
       locationId: 3
     })
   ])
