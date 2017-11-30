@@ -63,8 +63,8 @@ async function seed () {
     }),
     Question.create({
       content: 'Give Thanks',
-      answer: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\nWelcome to CodeMode!";`,
-      boilerplate: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\nWelcome to CodeMode!";`,
+      answer: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\\nWelcome to CodeMode!";`,
+      boilerplate: `var name = prompt('Hi! What is your name?'); "Great to meet you, " + name + "!\\nWelcome to CodeMode!";`,
       locationId: 3
     })
   ])
