@@ -36,12 +36,12 @@ async function seed () {
     })
   ])
   const questions = await Promise.all([
-    Question.create({content: 'make an array', description: 'Arrays', hints: ['const array...'], answer: 'const array=[1,2,3,4,5]', boilerplate: 'const array=[]', locationId: 1}),
-    Question.create({content: 'make an object', description: 'Objects', hints: ['const obj...'], answer: 'const obj = {name: cody, age: 30}', boilerplate: 'const obj={}', locationId: 2 }),
+    Question.create({content: 'make an array', description: 'Arrays', hints: ['const array...'], answer: 'const array=[1,2,3,4,5]', boilerplate: 'const array=[]', locationId: 1, userId: 1}),
+    Question.create({content: 'make an object', description: 'Objects', hints: ['const obj...'], answer: 'const obj = {name: cody, age: 30}', boilerplate: 'const obj={}', locationId: 2, userId: 2 }),
     Question.create({content: 'make a for-loop', description: 'For-Loops', hints: ['for (let i = 0)...'], answer: `for (let i = 0; i < 5; i++){
-      i*2 }`, boilerplate: 'for ()', locationId: 1 }),
+      i*2 }`, boilerplate: 'for ()', locationId: 1, userId: 1 }),
     Question.create({content: 'make a function', description: 'Functions', hints: ['const functionName...'], answer: `const myFunction = num => {
-      return num + 5 }`, boilerplate: 'const myFunction = ', locationId: 1
+      return num + 5 }`, boilerplate: 'const myFunction = ', locationId: 1, userId: 2
     }),
     Question.create({
       content: 'Prompt Intro',
@@ -57,7 +57,7 @@ async function seed () {
       answer: `var name = prompt('Hi! What is your name?'); alert(name);`,
       boilerplate: `var name = prompt('Hi! What is your name?'); alert(name);`,
       locationId: 3,
-      userId: 1
+      userId: 2
     }),
     Question.create({
       content: 'Combine Them',
@@ -84,7 +84,7 @@ async function seed () {
       boilerplate: `var name = prompt('Hi! What is your name?');
         "Great to meet you, " + name + "! Welcome to CodeMode!";`,
         locationId: 4,
-        userId: 1
+        userId: 2
       }),
       Question.create({
         content: 'Fibonacci',
