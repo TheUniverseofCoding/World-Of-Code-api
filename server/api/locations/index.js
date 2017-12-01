@@ -33,6 +33,7 @@ router.post('/', (req, res, next) => {
 
 // create a location
 router.post('/register', (req, res, next) => {
+  console.log('req.body!!!!!!!!!!!!!!!!!!!!! ', req.body)
   Location.create(req.body)
     .then(location => res.status(201).json(location))
     .catch(next)
