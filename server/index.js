@@ -15,6 +15,7 @@ const app = express()
 const http = require('http')
 const https = require('https')
 const socketio = require('socket.io')
+const cors = require('cors')
 module.exports = app
 
 
@@ -30,15 +31,17 @@ passport.deserializeUser((id, done) =>
 const createApp = () => {
 
   // logging middleware
-  app.use(morgan('dev'))
+app.use(morgan('dev'))
 
  // allow CORS
- app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  res.header("Access-Control-Allow-Methods", "PUT", "DELETE")
-  next()
-})
+ app.use(cors())
+//  app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*')
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+//   res.header('Access-Control-Allow-Methods', 'PUT', 'DELETE')
+//   // res.header('Access-Control-Allow-Headers', 'X-Requested-With')
+//   next()
+// })
 
   // body parsing middleware
   app.use(bodyParser.json())
