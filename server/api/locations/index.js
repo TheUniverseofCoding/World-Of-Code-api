@@ -25,11 +25,11 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 // get location by url
-router.post('/', (req, res, next) => {
-  Location.findOne({ where: { url: req.body.location } })
-    .then(location => res.send(location))
-    .catch(next)
-})
+// router.post('/', (req, res, next) => {
+//   Location.findOne({ where: { url: req.body.location } })
+//     .then(location => res.send(location))
+//     .catch(next)
+// })
 
 // create a location
 router.post('/register', (req, res, next) => {
