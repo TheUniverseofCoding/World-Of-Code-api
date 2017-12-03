@@ -168,7 +168,7 @@ let makeTree = (categories, parent) => {}`,
     }`,
     boilerplate:`const array = [[1,2],[3,4],[5,6]]
                  const nestedReduce = array => {}`,
-    locationid: 1,
+    locationId: 1,
     userId: 1
   }),
   // higher order functions
