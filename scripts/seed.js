@@ -114,16 +114,16 @@ async function seed () {
     return animal.species === 'dog'
   })`,
     boilerplate: `var animals = [
-    {name: 'Fluffykins', species: 'rabbit'},
-    {name: 'Caro', species: 'dog'},
-    {name: 'Hamilton', species: 'dog'},
-    {name: 'Harold', species: 'fish'},
-    {name: 'Ursula', species: 'cat'},
-    {name: 'Jimmy', species: 'fish'},
-  ]
-  var isDog = animal => {
-    return animal.species === 'dog'
-  }`,
+  {name: 'Fluffykins', species: 'rabbit'},
+  {name: 'Caro', species: 'dog'},
+  {name: 'Hamilton', species: 'dog'},
+  {name: 'Harold', species: 'fish'},
+  {name: 'Ursula', species: 'cat'},
+  {name: 'Jimmy', species: 'fish'},
+]
+var dogs = animals.filter(function(animal) {
+  return animal.species === 'dog'
+})`,
     locationId: 1,
     userId: 1
   }),
