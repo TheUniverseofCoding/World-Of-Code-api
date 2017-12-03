@@ -7,7 +7,7 @@ async function seed () {
   await db.sync({ force: true })
   console.log('db synced!')
   const users = await Promise.all([
-    User.create({ email: '16dmason@gmail.com', password: '2@fsghwdf' }),
+    User.create({ email: 'dmason@gmail.com', password: 'password' }),
   ])
   const locations = await Promise.all([
     Location.create({id: 1, url: 'https://www.youtube.com/watch?v=BMUiFMZr7vk', userId: 1}),
@@ -16,7 +16,7 @@ async function seed () {
   const questions = await Promise.all([
     // Recursion -- Video 2
   Question.create({
-    content: `Find the longest increasing 
+    content: `Find the longest increasing
               subsequence in an array of numbers.`,
     description: `Longest Increasing
                   Subsequence`,
@@ -27,8 +27,8 @@ async function seed () {
       if (num <= base) return whenExcluded;
       const whenIncluded = 1 + longestIncreasingSubsequence(nums, idx + 1, num);
       return Math.max(whenIncluded, whenExcluded);
-    } 
-        
+    }
+
     longestIncreasingSubsequence([10, 22, 9, 33, 20, 50, 41, 60, 80])`,
     boilerplate: `const longestIncreasingSubsequence = (nums, idx = 0, base = -Infinity)  => {
 // your code here
@@ -41,14 +41,14 @@ async function seed () {
               in a fibonacci sequence.`,
     description: 'Fibonacci',
     answer:`const fibonacci = num => {
-      if (num === 0) return 1 
-      if (num === 1) return 1 
+      if (num === 0) return 1
+      if (num === 1) return 1
       else return fibonacci(num - 1) + fibonacci(num - 2)
     }
-        
+
     fibonacci(4)`,
     boilerplate: `const fibonacci = {
-// your code here 
+// your code here
 }`,
     locationId: 2,
     userId: 1
@@ -57,11 +57,11 @@ async function seed () {
     content: `Find the factorial of a number`,
     description: 'Factorial',
     answer: `const factorial = num => {
-      if (num === 0) return 1 
+      if (num === 0) return 1
       if (num === 1) return 1
       else return num * factorial(num - 1)
     }
-        
+
     factorial(5)`,
     boilerplate: `const factorial = {
 // your code here
@@ -70,14 +70,14 @@ async function seed () {
     userId: 1
   }),
   Question.create({
-    content: `Write a function 'merge' which 
-              implements the given function 
-              'mergeSort' and sorts an array 
+    content: `Write a function 'merge' which
+              implements the given function
+              'mergeSort' and sorts an array
               from largest to smallest value.`,
     description: 'Merge Sort',
     answer: `const merge = (left, right) => {
       const result = [];
-      while (left.length && right.length) 
+      while (left.length && right.length)
         if (left[0] <= right[0]) result.push(left.shift());
         else result.push(right.shift());
       while (left.length)
@@ -94,10 +94,10 @@ async function seed () {
       const right  = arr.slice(middle, arr.length);
       return merge(mergeSort(left), mergeSort(right));
     }`,
-    locationId: 2, 
+    locationId: 2,
     userId: 1
   }),
-  // Higher Order Functions 
+  // Higher Order Functions
   Question.create({
     content: `Filter the array of animals
                   by species`,
@@ -131,12 +131,12 @@ async function seed () {
     userId: 1
   }),
   Question.create({
-    content: `Create a function which takes 
+    content: `Create a function which takes
               an array and a string, 'parent'.
               Return a nested 'tree' object
-              in which 'parent' is the root node 
-              and children are the element of the 
-              array whose parent property matches 
+              in which 'parent' is the root node
+              and children are the element of the
+              array whose parent property matches
               'parent'`,
     description: 'JSON Object Tree',
     answer: `let categories = [
@@ -176,8 +176,8 @@ let makeTree = (categories, parent) => {
     userId: 1
   }),
   Question.create({
-    content: `Replace every instance of a word 
-              in a string with another word. 
+    content: `Replace every instance of a word
+              in a string with another word.
               Don't use JS's .replace method.`,
     description: 'Replace',
     answer: `const replace = (string, word1, word2) => {
@@ -188,7 +188,7 @@ let makeTree = (categories, parent) => {
       .join(' ')
     }`,
     boilerplate: `const replace = (string, word1, word2) => {
-// your code here 
+// your code here
 }`,
     locationId: 1,
     userId: 1
