@@ -41,13 +41,8 @@ async function seed () {
               in a fibonacci sequence.`,
     description: 'Fibonacci',
     answer:`const fibonacci = num => {
-<<<<<<< HEAD
-      if (num === 1) return 1 
-      if (num === 2) return 1 
-=======
       if (num === 0) return 1
       if (num === 1) return 1
->>>>>>> 309dea2df81fda439c63eb2142b6a82fd36b1e15
       else return fibonacci(num - 1) + fibonacci(num - 2)
     }
 
