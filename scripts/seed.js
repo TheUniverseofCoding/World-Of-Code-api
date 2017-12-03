@@ -30,7 +30,8 @@ async function seed () {
         } 
         
         longestIncreasingSubsequence([10, 22, 9, 33, 20, 50, 41, 60, 80])`,
-        boilerplate: `const longestIncreasingSubsequence = (nums, idx = 0, base = -Infinity)  =>`,
+        boilerplate: `const longestIncreasingSubsequence = (nums, idx = 0, base = -Infinity)  => {
+        }`,
         locationId: 2,
         userId: 1
       }),
@@ -46,7 +47,7 @@ async function seed () {
         }
         
         fibonacci(4)`,
-        boilerplate: `const fibonacci = `,
+        boilerplate: `const fibonacci = {}`,
         locationId: 2,
         userId: 1
       }),
@@ -61,7 +62,7 @@ async function seed () {
         }
         
         factorial(5)`,
-        boilerplate: `const factorial = `,
+        boilerplate: `const factorial = {}`,
         locationId: 2,
         userId: 1
       }),
@@ -96,8 +97,14 @@ async function seed () {
       }),
       // higher order functions
       Question.create({
-        content: `Make Tree`,
-        description: 'Make Tree',
+        content: `Create a function which takes 
+                  an array and a string, 'parent'.
+                  Return a nested 'tree' object
+                  in which 'parent' is the root node 
+                  and children are the element of the 
+                  array whose parent property matches 
+                  'parent'`,
+        description: 'JSON Object Tree',
         answer: `let categories = [
   { id: 'animals', 'parent': null },
   { id: 'mammals', 'parent': 'animals' },
@@ -116,12 +123,8 @@ let makeTree = (categories, parent) => {
     .forEach(c => node[c.id] =
       makeTree(categories, c.id))
   return node
-}
-
-JSON.stringify(
-  makeTree(categories, null), null, 2
-)`,
-        boilerplate: `let categories = [
+}`,
+      boilerplate: `let categories = [
   { id: 'animals', 'parent': null },
   { id: 'mammals', 'parent': 'animals' },
   { id: 'cats', 'parent': 'mammals' },
@@ -132,16 +135,26 @@ JSON.stringify(
   { id: 'siamese', 'parent': 'cats' }
 ]
 
-let makeTree = (categories, parent) => {
-
-}
-
-JSON.stringify(
-  makeTree(categories, null), null, 2
-)`,
-        locationId: 1,
-        userId: 1
-      }),
+let makeTree = (categories, parent) => {}`,
+    locationId: 1,
+    userId: 1
+  }),
+  Question.create({
+    content: `Replace every instance of a word 
+              in a string with another word. 
+              Don't use JS's .replace method.`,
+    description: 'Replace',
+    answer: `const replace = (string, word1, word2) => {
+      return string.split(' ').map(selectedWord => {
+        if (selectedWord === word1) return word2
+        else return selectedWord
+      })
+      .join(' ')
+    }`,
+    boilerplate: `const replace = (string, word1, word2) => {}`,
+    locationId: 1,
+    userId: 1
+  }),
   // higher order functions
   Question.create({
     content: `Use .map and .reduce to sum
@@ -159,23 +172,7 @@ JSON.stringify(
     userId: 1
   }),
   // higher order functions
-  Question.create({
-    content: `Replace every instance of a word 
-              in a string with another word. 
-              Don't use JS's .replace method.`,
-    description: 'Replace',
-    answer: `const replace = (string, word1, word2) => {
-      return string.split(' ').map(selectedWord => {
-        if (selectedWord === word1) return word2
-        else return selectedWord
-      })
-      .join(' ')
-    }`,
-    boilerplate: `const replace = (string, word1, word2) => {
-    }`,
-    locationId: 1,
-    userId: 1
-  }),
+  
   // higher order functions
   Question.create({
     content: `Filter the array of animals
@@ -205,9 +202,7 @@ JSON.stringify(
       ]
     const isDog = animal => {
       return animal.species === 'dog'
-    }
-    console.log(animals.filter(isDog)
-                       .map(selectedAnimal => selectedAnimal.name))`,
+    }`,
     locationId: 1,
     userId: 1
   }),
