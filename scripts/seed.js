@@ -7,7 +7,7 @@ async function seed () {
   await db.sync({ force: true })
   console.log('db synced!')
   const users = await Promise.all([
-    User.create({ email: 'dmason@gmail.com', password: 'password' }),
+    User.create({ email: 'aziggy1337@gmail.com', password: 'password' }),
   ])
   const locations = await Promise.all([
     Location.create({id: 1, url: 'https://www.youtube.com/watch?v=BMUiFMZr7vk', userId: 1}),
