@@ -31,7 +31,8 @@ async function seed () {
         
         longestIncreasingSubsequence([10, 22, 9, 33, 20, 50, 41, 60, 80])`,
         boilerplate: `const longestIncreasingSubsequence = (nums, idx = 0, base = -Infinity)  => {
-        }`,
+// your code here
+}`,
         locationId: 2,
         userId: 1
       }),
@@ -47,7 +48,9 @@ async function seed () {
         }
         
         fibonacci(4)`,
-        boilerplate: `const fibonacci = {}`,
+        boilerplate: `const fibonacci = {
+// your code here 
+}`,
         locationId: 2,
         userId: 1
       }),
@@ -62,7 +65,9 @@ async function seed () {
         }
         
         factorial(5)`,
-        boilerplate: `const factorial = {}`,
+        boilerplate: `const factorial = {
+// your code here
+}`,
         locationId: 2,
         userId: 1
       }),
@@ -135,7 +140,9 @@ let makeTree = (categories, parent) => {
   { id: 'siamese', 'parent': 'cats' }
 ]
 
-let makeTree = (categories, parent) => {}`,
+let makeTree = (categories, parent) => {
+// your code here
+}`,
     locationId: 1,
     userId: 1
   }),
@@ -167,7 +174,9 @@ let makeTree = (categories, parent) => {}`,
       .reduce((a,b) => a+b)
     }`,
     boilerplate:`const array = [[1,2],[3,4],[5,6]]
-                 const nestedReduce = array => {}`,
+const nestedReduce = array => {
+// your code here
+}`,
     locationId: 1,
     userId: 1
   }),
@@ -179,34 +188,34 @@ let makeTree = (categories, parent) => {}`,
               by species`,
     description: 'Video Exercise',
     answer: `var animals = [
-      {name: 'Fluffykins', species: 'rabbit'},
-      {name: 'Caro', species: 'dog'},
-      {name: 'Hamilton', species: 'dog'},
-      {name: 'Harold', species: 'fish'},
-      {name: 'Ursula', species: 'cat'},
-      {name: 'Jimmy', species: 'fish'},
-      ]
-    var isDog = animal => {
-      return animal.species === 'dog'
-    }
-    var dogs = animals.filter(isDog)
-                      .map(selectedAnimal => selectedAnimal.name)
+  {name: 'Fluffykins', species: 'rabbit'},
+  {name: 'Caro', species: 'dog'},
+  {name: 'Hamilton', species: 'dog'},
+  {name: 'Harold', species: 'fish'},
+  {name: 'Ursula', species: 'cat'},
+  {name: 'Jimmy', species: 'fish'},
+]
+var isDog = animal => {
+  return animal.species === 'dog'
+}
+var dogs = animals.filter(isDog)
+                  .map(selectedAnimal => selectedAnimal.name)
     console.log(dogs)`,
     boilerplate: `const animals = [
-      {name: 'Fluffykins', species: 'rabbit'},
-      {name: 'Caro', species: 'dog'},
-      {name: 'Hamilton', species: 'dog'},
-      {name: 'Harold', species: 'fish'},
-      {name: 'Ursula', species: 'cat'},
-      {name: 'Jimmy', species: 'fish'},
-      ]
-    const isDog = animal => {
-      return animal.species === 'dog'
-    }`,
+  {name: 'Fluffykins', species: 'rabbit'},
+  {name: 'Caro', species: 'dog'},
+  {name: 'Hamilton', species: 'dog'},
+  {name: 'Harold', species: 'fish'},
+  {name: 'Ursula', species: 'cat'},
+  {name: 'Jimmy', species: 'fish'},
+]
+const isDog = animal => {
+  return animal.species === 'dog'
+}`,
     locationId: 1,
     userId: 1
-  }),
-  ])
+  })
+])
 //   const users = await Promise.all([
 //     User.create({ email: 'cody@email.com', password: '123' }),
 //     User.create({ email: 'murphy@email.com', password: '123' })
