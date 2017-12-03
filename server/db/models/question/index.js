@@ -10,7 +10,7 @@ const Question = db.define('question', {
     allowNull: false
   },
   description: {
-    type: Sequelize.STRING(50),
+    type: Sequelize.STRING(100),
     allowNull: false
   },
   hints: Sequelize.ARRAY(Sequelize.TEXT),
