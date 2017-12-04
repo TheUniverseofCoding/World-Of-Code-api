@@ -70,30 +70,30 @@ async function seed () {
     userId: 1
   }),
   Question.create({
-    content: `Write a function 'merge' which
-              implements the given function
+    content: `Use recursion to write a function 'merge' 
+              which implements the given function
               'mergeSort' and sorts an array
               from largest to smallest value.`,
     description: 'Merge Sort',
     answer: `const merge = (left, right) => {
-      const result = [];
-      while (left.length && right.length)
-        if (left[0] <= right[0]) result.push(left.shift());
-        else result.push(right.shift());
-      while (left.length)
-        result.push(left.shift());
-      while (right.length)
-        result.push(right.shift());
-      return result;
-    }
-    mergeSort([4,5,4,7,1,5])`,
+  const result = [];
+  while (left.length && right.length)
+    if (left[0] <= right[0]) result.push(left.shift());
+    else result.push(right.shift());
+  while (left.length)
+    result.push(left.shift());
+  while (right.length)
+    result.push(right.shift());
+  return result;
+}
+mergeSort([4,5,4,7,1,5])`,
     boilerplate: `const mergeSort = arr => {
-      if (arr.length < 2) return arr;
-      const middle = parseInt(arr.length / 2);
-      const left   = arr.slice(0, middle);
-      const right  = arr.slice(middle, arr.length);
-      return merge(mergeSort(left), mergeSort(right));
-    }`,
+  if (arr.length < 2) return arr;
+  const middle = parseInt(arr.length / 2);
+  const left   = arr.slice(0, middle);
+  const right  = arr.slice(middle, arr.length);
+  return merge(mergeSort(left), mergeSort(right));
+}`,
     locationId: 2,
     userId: 1
   }),
