@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "deploy": "scripts/deploy.sh",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "test": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/world-of-code-test' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js --compilers js:babel-register --exit"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,9 @@
   "dependencies": {
     "axios": "^0.17.1",
     "axios-mock-adapter": "^1.10.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
     "compression": "^1.7.1",
     "connect-session-sequelize": "^5.0.1",
     "cors": "^2.8.4",
